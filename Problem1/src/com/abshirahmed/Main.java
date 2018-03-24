@@ -26,6 +26,5 @@ public class Main {
 
         System.out.println("The sum of all the natural numbers below " +
                             limit + " that are multiples of 3 or 5 is " + sum);
-
     }
 }
