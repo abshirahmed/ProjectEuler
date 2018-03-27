@@ -2,6 +2,9 @@ package com.abshirahmed;
 
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static com.abshirahmed.PrimeFactorsEffective.primeFactors;
 
 public class Main {
     /**
@@ -16,30 +19,36 @@ public class Main {
      * <p>6. repeat until answer equals 1</p>
      */
     public static void main(String[] args) {
-        int value = 24325;
-        findPrimeFactorsOf(value);
+
+        long limit = 600_851_475_143L;
+        System.out.println("Primefactors of " + limit);
+        for (Long value : primeFactors(limit)) {
+            System.out.println(value);
+        }
+
     }
 
-    private static int findPrimeFactorsOf(int value) {
 
-        ArrayList<Integer> primeFactors = new ArrayList<>();
-        ArrayList<Integer> newValue = new ArrayList<>();
+}
 
-        for (int i = 1; i <= value; i++) {
+class PrimeFactorsEffective {
+    static List<Long> primeFactors(long numbers) {
+        long n = numbers;
+        List<Long> factors = new ArrayList<>();
+        for (int i = 2; i <= n / i; i++) {
 
-            if ((value % i == 0) & (i != 1)) {
-                primeFactors.add(i);
-                newValue.add(value / i);
-                System.out.println(i+" is a prime factor");
-                return findPrimeFactorsOf(value / i);
+            while (n % i == 0) {
+                factors.add((long) i);
+                n /= i;
             }
 
         }
-        return 0;
+        if (n > 1) {
+            factors.add(n);
+        }
 
+        return factors;
     }
-
-
 }
 
 
