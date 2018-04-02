@@ -6,7 +6,7 @@ package com.abshirahmed;
  * Find the sum of all the multiples of 3 or 5 below 1000.
  */
 
-public class Main {
+public class Problem1 {
 
     public static void main(String[] args) {
 

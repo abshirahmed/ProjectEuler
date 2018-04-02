@@ -11,7 +11,7 @@ import java.util.Arrays;
  * find the sum of the even-valued terms.
  */
 
-public class Main {
+public class Problem2 {
 
     public static void main(String[] args) {
 
